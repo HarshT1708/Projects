@@ -1,0 +1,6 @@
+<odoo>
+	 <template id="product_page_template_inherit" inherit_id="website_sale.product" name="Remove Variant">
+        <xpath expr="//t[@t-if='combination']" position="replace">
+        </xpath>
+    </template>
+</odoo>
