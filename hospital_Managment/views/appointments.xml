@@ -1,0 +1,46 @@
+<odoo>
+	 
+
+#Appointments Tree view
+	<record id="view_appointments_tree" model="ir.ui.view">
+		<field name="name">appointments.tree</field>
+		<field name="model">hospital.appointments</field>
+		<field name="arch" type="xml">
+			<tree>
+			<!-- <tree decoration-success="status_id == 1"> -->
+				<field name="patient_name_id"></field>
+				<field name="doctor_name"></field>
+				<field name="status" widget="badge" decoration-success="status == 'DONE'" decoration-info="status == 'IN PROGRESS'" decoration-danger="status == 'CANCEL'" decoration-muted="status == 'DRAFT'"/>
+				<button name="count_app" string="Status" type="object" class="oe_highlight"/>
+
+			</tree>
+			
+		</field>
+
+	</record>
+
+
+
+	#Degree Form view
+
+	<record id="view_appointments_form" model="ir.ui.view">
+
+		<field name="name">appointments.form</field>
+		<field name="model">hospital.appointments</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<field name="patient_name_id"></field>
+						<field name="doctor_name"/>
+							<!-- attrs="{'readonly':['|',('status_id','=',%(hospital_Managment.status_cancel)d),('patient_name_id','=',20)]}" -->
+							<!-- </field> -->
+						<field name="status"></field>
+					</group>
+				</sheet>
+			</form>
+		</field>
+
+	</record>
+
+</odoo>

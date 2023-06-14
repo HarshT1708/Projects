@@ -1,0 +1,48 @@
+<odoo>
+	 
+
+#Bills Tree view
+	<record id="view_hospital_bill_tree" model="ir.ui.view">
+		<field name="name">hospital.bill</field>
+		<field name="model">hospital.bill</field>
+		<field name="arch" type="xml">
+			<tree>
+			<field name="patient_id"/>
+			<field name="visited_doctor"/>
+			<field name="vis_charge"/>
+			<field name="price"/>
+
+			</tree>
+			
+		</field>
+
+	</record>
+
+
+
+	#Bills Form view
+
+	<record id="view_hospital_bill_form" model="ir.ui.view">
+
+		<field name="name">hospital.bill</field>
+		<field name="model">hospital.bill</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<field name="patient_id"/>
+						<field name="medicine_ids" widget="many2many_tags"/>
+						<field name="visited_doctor" readonly="1"/>
+						<field name="vis_charge"/>
+						<field name="med_charge" readonly="1"/>
+						<field name="price"/>
+							
+
+						</group>
+				</sheet>
+			</form>
+		</field>
+
+	</record>
+
+</odoo>

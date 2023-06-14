@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+
+	<!-- <xpath expr="//div[@id='informations']" position="inside"> -->
+	<xpath expr="//div/p[@t-field='doc.date_order'][1]/.." position="after">
+		<div t-if="doc.team_id.name" class="col-auto col-3 mw-100 mb-2">
+            <strong>Sales Team:</strong>
+            <p class="m-0" t-field="doc.team_id"/>
+        </div>
+	</xpath>
+
+	<xpath expr="//table/thead/tr/th[@name='th_priceunit']" position="after">
+		<th name="th_leadtime" class="text-right">Lead Time</th>
+	</xpath>
+
+	<xpath expr="//tbody//td[@name='td_priceunit']" position="after">
+			<td name="td_priceunit" class="text-right">
+            <span t-field="line.customer_lead"/>
+            </td>
+		</xpath>
+
+
+
+
+
+
+</template>
+</odoo>
